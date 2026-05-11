@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    margin: 1em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.usuarios-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.usuarios-list li {
+    margin-bottom: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+.container h1 {
+    margin-bottom: 1em;
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+    width: 50%;
+    align-self: center;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.btn-container a:nth-child(2) {
+    background-color: purple;
+
+}
+
+.btn-container a:last-child {
+    background-color: red;
+}
+
+ul.usuarios-list {
+    list-style: none;
+    padding: 0;
+}
+
+ul.usuarios-list li {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+ul.usuarios-list li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.btn-container a {
+    margin-right: 10px;
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn-container a:hover {
+    background-color: #0056b3;
+}
+
+#btn-eliminar-seleccionados {
+    display: none;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
