@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/ver-usuarios.css">
+    <link rel="stylesheet" href="/css/welcome.css">
     <title>CRUD de usuarios</title>
 </head>
 <body>
@@ -20,7 +20,9 @@
                 @foreach ($usuarios as $usuario)
                     <li data-id="{{ $usuario->id }}">
                         <span>{{ $usuario->name }} - {{ $usuario->email }} - {{ $usuario->birth }}</span>
+                        <a href="/editar-usuario/{{ $usuario->id }}">Editar</a>
                     </li>
+                    
                 @endforeach
             @else
                 <li>No hay usuarios registrados</li>
@@ -32,7 +34,7 @@
 
     <div class="btn-container">
         <a href="/form-usuario">Crear usuario</a>
-        <a href="/editar-usuario">Editar usuario</a>
+        <a href="/editar-usuario">Editar usuario por email</a>
         <a href="#" id="btn-activar-eliminar">Eliminar usuario</a>
     </div>
 </div>

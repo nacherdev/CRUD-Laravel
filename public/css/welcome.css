@@ -1,11 +1,11 @@
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh;
 }
 
 a {
@@ -28,7 +28,6 @@ a {
 
 .usuarios-list li {
     margin-bottom: 1em;
-    padding: 10px;
     border-radius: 5px;
     background-color: #fff;
 }
@@ -37,7 +36,6 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 50vh;
 }
 
@@ -49,7 +47,6 @@ a {
     text-align: center;
     width: 100%;
     margin-top: 1em;
-    width: 50%;
     align-self: center;
 }
 
@@ -76,10 +73,10 @@ ul.usuarios-list {
 }
 
 ul.usuarios-list li {
-    padding: 8px;
     border-bottom: 1px solid #ccc;
     display: flex;
     align-items: center;
+    padding-left: 1em;
 }
 
 ul.usuarios-list li input[type="checkbox"] {
@@ -108,4 +105,10 @@ ul.usuarios-list li input[type="checkbox"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+ul.usuarios-list li a {
+    text-decoration: none;
+    background-color: purple;
+    padding: 5px 10px;
 }
