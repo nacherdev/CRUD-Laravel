@@ -63,8 +63,12 @@ a {
 
 }
 
-.btn-container a:last-child {
+.btn-container a:nth-child(3) {
     background-color: red;
+}
+
+.btn-container a:nth-child(4) {
+    background-color: green;
 }
 
 ul.usuarios-list {
@@ -108,7 +112,6 @@ ul.usuarios-list li input[type="checkbox"] {
 }
 
 ul.usuarios-list li a {
-    text-decoration: none;
     background-color: purple;
     padding: 5px 10px;
 }

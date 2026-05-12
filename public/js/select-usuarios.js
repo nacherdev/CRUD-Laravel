@@ -6,6 +6,8 @@ btnActivarEliminar.addEventListener('click', (e) => {
     e.preventDefault();
 
     btnEliminar.style.display = btnEliminar.style.display === 'none' ? 'inline-block' : 'none';
+    btnActivarEliminar.innerText = btnActivarEliminar.innerText === "Eliminar usuario" ? "X Cerrar" : "Eliminar usuario";
+    btnActivarEliminar.style.backgroundColor = btnActivarEliminar.style.backgroundColor === "blue" ? "red" : "blue";
 
     lista.querySelectorAll('li').forEach(li => {
         if (li.querySelector('input[type="checkbox"]')) {

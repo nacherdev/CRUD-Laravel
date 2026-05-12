@@ -2,9 +2,30 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Libro;
 
-class Usuario extends Model
+class Usuario extends Authenticatable
 {
-    protected $fillable = ['name', 'email', 'birth'];
+    use HasFactory;
+
+    protected $table = 'usuarios';
+
+    protected $fillable = [
+        'name',
+        'email',
+        'birth',
+        'password',
+        'admin',
+    ];
+
+    protected $hidden = [
+        'password',
+    ];
+
+    public function libros()
+    {
+        return $this->hasMany(Libro::class, 'id_autor');
+    }
 }
