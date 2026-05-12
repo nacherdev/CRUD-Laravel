@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de libros</title>
+@extends('layouts.app')
+    @section('title')
+        <title>Lista de libros</title>
+
     <link rel="stylesheet" href="/css/ver-libros.css">
-</head>
-<body>
-    @extends('layouts.app')
+    <link rel="stylesheet" href="/css/app.css">
+    @endsection
     @section('content')
 
     <div class="btn-volver">
@@ -27,5 +24,3 @@
         </ul>
     </div>
     @endsection
-</body>
-</html>

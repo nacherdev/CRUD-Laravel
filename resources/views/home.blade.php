@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.app')
+    @section('title')
     <title>Home</title>
     <link rel="stylesheet" href="/css/home.css">
-</head>
-<body>
-    @extends('layouts.app')
-
-</body>
-</html>
+    @endsection
+    
+    
+    @section('content')
+    <h1>Home</h1>
+    <div class="container-welcome">
+        <h2>Bienvenido, {{ $usuario->name }}</h2>
+    </div>
+    @endsection

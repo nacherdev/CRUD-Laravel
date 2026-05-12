@@ -10,11 +10,6 @@ body {
 
 a {
     text-decoration: none;
-    color: #000;
-    margin: 1em;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -54,6 +49,16 @@ a {
     align-self: start;
 }
 
-.btn-volver a {
-    margin-top: 1em;
+.btn-volver  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 2em;
+    margin: 1em;
 }
