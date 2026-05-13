@@ -17,6 +17,8 @@ class Usuario extends Authenticatable
         'email',
         'birth',
         'password',
+        'username',
+        'biografia',
         'admin',
     ];
 

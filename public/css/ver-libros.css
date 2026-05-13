@@ -1,37 +1,25 @@
-body {
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-}
-
-a {
-    text-decoration: none;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
 .libros-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 90%;
 }
 
 .libros-list li {
     margin-bottom: 1em;
     border-radius: 5px;
     background-color: #fff;
+    padding: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
+    min-height: 20em;
+    padding-bottom: 3em;
+    height: auto;
 }
 
 .container h1 {
@@ -45,20 +33,3 @@ a {
     align-self: center;
 }
 
-.btn-ver-usuarios {
-    align-self: start;
-}
-
-.btn-volver  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    border-radius: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    width: 2em;
-    margin: 1em;
-}

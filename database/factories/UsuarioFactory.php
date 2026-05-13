@@ -23,6 +23,8 @@ class UsuarioFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'birth' => $this->faker->date(),
             'password' => Hash::make('password'),
+            'username' => $this->faker->unique()->userName(),
+            'biografia' => $this->faker->sentence(),
             'admin' => $this->faker->boolean(20)
         ];
     }

@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar Usuario</title>
-    <link rel="stylesheet" href="/css/buscar-usurio.css">
-</head>
-<body>
+    @section('title')
+        <title>Buscar Usuario</title>
+        <link rel="stylesheet" href="/css/buscar-usurio.css">
+    @endsection
+
+    @section('content')
     <a class="btn-ver-usuarios" href="/">Volver</a>
     <div class="container">
         <h1>Buscar Usuario</h1>
@@ -19,5 +16,4 @@
 
         </form>
     </div>
-</body>
-</html>
+    @endsection

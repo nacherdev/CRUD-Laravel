@@ -23,6 +23,5 @@ class DatabaseSeeder extends Seeder
 
         Usuario::factory(10)->create();
         Libro::factory(10)->create();
-        
     }
 }

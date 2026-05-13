@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@section('title')
     <link rel="stylesheet" href="/css/panel-admin.css">
     <title>Panel de administrador</title>
-</head>
-<body>
+@endsection
 
+@section('content')
 <div class="container">
     <h1>Panel de administrador</h1>
     <h2>Usuarios registrados</h2>
-    <h3>Bienvenido, {{ $usuario->name }}</h3>
-    <form action="/logout" method="post">
-        @csrf
-        <input type="submit" value="Logout">
-    </form>
 
     <form action="/eliminar-usuarios" method="post" id="form-eliminar">
         @csrf
@@ -47,7 +39,10 @@
     </div>
 </div>
 
-<script src="/js/select-usuarios.js"></script>
 
-</body>
-</html>
+
+@endsection
+
+@section('scripts')
+    <script src="/js/select-usuarios.js"></script>
+@endsection

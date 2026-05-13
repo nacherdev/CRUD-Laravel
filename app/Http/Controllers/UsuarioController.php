@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use App\Models\Libro;
 
 class UsuarioController extends Controller
 {
@@ -43,6 +44,7 @@ class UsuarioController extends Controller
     public function destroy(Request $request)
     {
         $usuario = Usuario::findOrFail($request->id);
+        $usuario->libros()->delete();
         $usuario->delete();
         return redirect('/')->with('success', 'Usuario eliminado correctamente');
     }
@@ -70,9 +72,10 @@ class UsuarioController extends Controller
             'usuarios.*' => 'integer|exists:usuarios,id',
         ]);
     
+        Libro::whereIn('id_autor', $request->usuarios)->delete();
         Usuario::whereIn('id', $request->usuarios)->delete();
     
         // Redirigimos con mensaje de éxito
-        return redirect('/')->with('success', 'Usuarios eliminados correctamente');
+        return redirect('/panel-admin')->with('success', 'Usuarios eliminados correctamente');
     }
 }

@@ -1,25 +1,3 @@
-body {
-    display: flex; /* agregar */
-    flex-direction: column; /* si quieres que todo esté en columna */
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* que tome toda la altura de la ventana */
-}
-
-a {
-    text-decoration: none;
-    color: #000;
-    margin: 1em;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
 .btn-ver-usuarios {
     align-self: start;
 }
@@ -29,6 +7,8 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2em;
+    margin-bottom: 2em;
 }
 
 
@@ -48,6 +28,15 @@ a {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #000;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input:focus {
+    outline: none;
+    border: 1px solid #007bff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s ease;
+    transform: scale(1.05);
 }
 
 .form-group input[type="submit"] {
@@ -55,14 +44,22 @@ a {
     color: #fff;
     border: none;
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 1.2em;
     border-radius: 5px;
     font-size: 1em;
     font-family: Arial, sans-serif;
     font-weight: bold;
     text-align: center;
     margin-top: 1em;
-    width: 50%;
+
     align-self: center;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: blue;
+    color: #fff;
+    transition: all 0.2s ease;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 

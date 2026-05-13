@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 class AuthController extends Controller
 {
     public function showLogin()
     {
-        return view('login');
+        $usuario = Auth::user();
+        return view('login', compact('usuario'));
     }
 
     public function login(Request $request)
@@ -68,8 +70,11 @@ class AuthController extends Controller
 
     public function showHome()
     {
+        $num_random = rand(1, 1025);
+        $response = Http::get('https://pokeapi.co/api/v2/pokemon/' . $num_random);
+        $pokemon = $response->json();
         $usuario = Auth::user();
-        return view('home', compact('usuario'));
+        return view('home', compact('usuario', 'pokemon'));
     }
 
     public function showPanelAdmin()
