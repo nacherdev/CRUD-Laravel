@@ -24,6 +24,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/ver-libros/{id}', [LibroController::class, 'indexById']);
     Route::get('/perfil', [AuthController::class, 'showPerfil'])->name('perfil');
     Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/pokemon', [AuthController::class, 'showPokemon']);
+    Route::get('/scraper-wikipedia', [AuthController::class, 'showScraperWikipedia']);
+    Route::post('/scraper-wikipedia', [AuthController::class, 'scrapeWikipedia']);
 });
 
 // Rutas admin

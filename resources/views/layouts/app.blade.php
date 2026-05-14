@@ -24,7 +24,8 @@
       ></path>
     </svg></a></li>
                 <li><a href="/ver-libros">Ver libros</a></li>
-
+                <li><a href="/pokemon">Pokemon</a></li>
+                <li><a href="/scraper-wikipedia">Scraper Wikipedia</a></li>
                 @if ($usuario->admin)
                     <li><a href="/panel-admin">Panel de administrador</a></li>
                 @endif

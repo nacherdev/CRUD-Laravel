@@ -7,12 +7,18 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use App\Jobs\ProcessScraper;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
     public function showLogin()
     {
         $usuario = Auth::user();
+
+        if ($usuario) {
+            return redirect('/');
+        }
         return view('login', compact('usuario'));
     }
 
@@ -88,5 +94,44 @@ class AuthController extends Controller
     {
         $usuario = Auth::user();
         return view('perfil', compact('usuario'));
+    }
+
+    public function showPokemon()
+    {
+        $usuario = Auth::user();
+        $num_random = rand(1, 1025);
+        $response = Http::get('https://pokeapi.co/api/v2/pokemon/' . $num_random);
+        $pokemon = $response->json();
+        $pokemon_habilities = Http::get('https://pokeapi.co/api/v2/pokemon/' . $num_random . '/abilities');
+        $pokemon_habilities = $pokemon_habilities->json();
+        $pokemon_type = Http::get('https://pokeapi.co/api/v2/pokemon/' . $num_random . '/types');
+        $pokemon_type = $pokemon_type->json();
+        $response2 = Http::get('https://pokeapi.co/api/v2/pokemon-species/' . $num_random);
+        $pokemon_species = $response2->json();
+        $pokemon_evolution_chain = Http::get('https://pokeapi.co/api/v2/evolution-chain/' . $num_random);
+        $pokemon_evolution_chain = $pokemon_evolution_chain->json();
+
+        return view('pokemon', compact('usuario','pokemon', 'pokemon_habilities', 'pokemon_type', 'pokemon_species', 'pokemon_evolution_chain'));
+    }
+
+    public function showScraperWikipedia()
+    {
+        $resultado = null;
+        $usuario = Auth::user();
+        return view('wiki-scraper', compact('resultado', 'usuario'));
+    }
+
+    public function scrapeWikipedia(Request $request)
+    {
+        $usuario = Auth::user();
+        $termino_busqueda = $request->input('busqueda');
+        ProcessScraper::dispatchSync($termino_busqueda);
+        $resultado = DB::table('datos_scraping')->where('busqueda', $termino_busqueda)->latest()->first();
+
+        return view('wiki-scraper', [
+            'resultado' => $resultado,
+            'busqueda' =>  $termino_busqueda,
+            'usuario' => $usuario
+        ]);
     }
 }
