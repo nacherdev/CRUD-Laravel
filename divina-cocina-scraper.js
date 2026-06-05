@@ -16,6 +16,7 @@ async function scrapeDivinaCocina() {
     const page = await context.newPage();
 
     try {
+        console.log('Iniciando busqueda...');
         await page.goto('https://www.divinacocina.es/', { waitUntil: 'domcontentloaded' });
 
         // Boton de Cookies

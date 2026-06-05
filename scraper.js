@@ -4,7 +4,7 @@ import { chromium } from 'playwright';
 async function scrapeWikipedia(busqueda) {
     const browser = await chromium.launch({ 
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'] // Vital para Docker
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     try {
         
